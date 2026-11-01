@@ -1,4 +1,5 @@
 streamlit
+setuptools<82
 tensorflow==2.15.0
 tensorflow-hub==0.16.1
 keras==2.15.0
