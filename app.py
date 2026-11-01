@@ -93,7 +93,7 @@ header[data-testid="stHeader"] {
 
 .sub {
     color: #aab8d0;
- font-size: 1.05rem;
+    font-size: 1.05rem;
     max-width: 650px;
     line-height: 1.8;
 }
@@ -116,7 +116,7 @@ header[data-testid="stHeader"] {
 
 .stat-label {
     color: var(--muted);
-     font-size: .83rem;
+    font-size: .83rem;
     margin-bottom: 8px;
 }
 
@@ -149,7 +149,7 @@ div[data-testid="stFileUploader"] section {
 
 div[data-testid="stFileUploader"] button {
     background: #1d4ed8 !important;
-     color: #ffffff !important;
+    color: #ffffff !important;
     border: 1px solid #60a5fa !important;
     border-radius: 10px !important;
     font-weight: 600 !important;
@@ -188,6 +188,7 @@ div[data-testid="stMetric"] {
     border-radius: 15px;
     padding: 16px;
 }
+
 div[data-testid="stMetricLabel"] { color: var(--muted); }
 div[data-testid="stMetricValue"] { color: #67e8f9; }
 
@@ -271,7 +272,7 @@ def load_models():
     return model, norm["mean"], norm["std"], categories, yamnet
 
 try:
-     model, mean, std, categories, yamnet = load_models()
+    model, mean, std, categories, yamnet = load_models()
 except Exception as e:
     st.error("Model load nahi ho saka. Please check model files and dependencies.")
     st.exception(e)
@@ -340,7 +341,8 @@ if audio_file is not None and classify:
             audio, sr = librosa.load(
                 audio_file, sr=16000, mono=True
             )
-             if len(audio) == 0:
+
+            if len(audio) == 0:
                 st.error("Audio file is empty.")
                 st.stop()
 
@@ -443,3 +445,9 @@ if audio_file is not None and classify:
 # ---------- FOOTER ----------
 st.markdown("---")
 st.markdown(
+    '<div style="text-align:center;color:#98a8c4;padding:12px">'
+    '<b style="color:#e2e8f0">SoundSense</b> · Environmental Sound '
+    'Classification · Powered by YAMNet + Deep Learning'
+    '</div>',
+    unsafe_allow_html=True
+)
