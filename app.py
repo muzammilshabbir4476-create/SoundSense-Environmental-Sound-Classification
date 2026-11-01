@@ -8,6 +8,7 @@ import numpy as np
 import streamlit as st
 import tensorflow as tf
 import tensorflow_hub as hub
+import streamlit.components.v1 as components
 
 st.set_page_config(
     page_title="SoundSense | AI Audio Intelligence",
@@ -127,12 +128,43 @@ header[data-testid="stHeader"] {
     color: #f4f7ff;
 }
 
+
+/* Premium audio upload area */
 div[data-testid="stFileUploader"] {
-    background: #0c1525;
-    border: 1px dashed #46668e;
-    border-radius: 15px;
-    padding: 14px;
+    background: linear-gradient(135deg, #101e34, #11172a);
+    border: 1px dashed #60a5fa;
+    border-radius: 18px;
+    padding: 18px;
+    transition: all 0.25s ease;
 }
+
+div[data-testid="stFileUploader"]:hover {
+    border-color: #67e8f9;
+    background: linear-gradient(135deg, #152844, #111a30);
+}
+
+div[data-testid="stFileUploader"] section {
+    background: transparent;
+    border: none;
+}
+
+div[data-testid="stFileUploader"] button {
+    background: #1d4ed8 !important;
+    color: #ffffff !important;
+    border: 1px solid #60a5fa !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+}
+
+div[data-testid="stFileUploader"] button:hover {
+    background: #2563eb !important;
+    color: #ffffff !important;
+}
+
+div[data-testid="stFileUploader"] small {
+    color: #b8c7df !important;
+}
+
 
 div.stButton > button {
     width: 100%;
@@ -256,7 +288,39 @@ st.markdown(
 left, right = st.columns([1.05, 0.95], gap="large")
 
 with left:
-    st.markdown("### 🎧 Audio workspace")
+    
+# Results anchor
+st.markdown(
+    '<div id="prediction-results"></div>',
+    unsafe_allow_html=True
+)
+
+# Automatically scroll to the results section
+components.html(
+    """
+    <script>
+    const scrollToResults = () => {
+        const target = window.parent.document.getElementById(
+            "prediction-results"
+        );
+
+        if (target) {
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+    };
+
+    setTimeout(scrollToResults, 300);
+    setTimeout(scrollToResults, 900);
+    </script>
+    """,
+    height=0,
+)
+
+st.markdown("## 🎯 Analysis results")
+
     st.markdown(
         '<div class="panel"><h3>Upload your audio</h3>'
         '<p style="color:#98a8c4">Choose a recording to begin classification. '
