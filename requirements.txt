@@ -1,7 +1,8 @@
-tensorflow
-tensorflow-hub
-librosa
-numpy
-scikit-learn
-soundfile
 streamlit
+tensorflow==2.15.0
+tensorflow-hub==0.16.1
+keras==2.15.0
+numpy<2
+librosa
+soundfile
+scikit-learn
