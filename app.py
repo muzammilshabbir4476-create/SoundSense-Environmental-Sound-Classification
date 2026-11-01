@@ -282,10 +282,11 @@ with left:
         )
 
     classify = st.button(
-        "✦  Analyze audio",
-        type="primary",
-        disabled=audio_file is None
-    )
+    "✦  Analyze audio",
+    type="primary",
+    disabled=audio_file is None,
+    use_container_width=True
+)
 
 with right:
     st.markdown("### ✨ How it works")
