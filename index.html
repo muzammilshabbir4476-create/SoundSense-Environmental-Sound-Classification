@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#081225" />
+  <title>SoundSense | AI Environmental Sound Classification</title>
+  <meta name="description" content="SoundSense uses deep learning to recognize environmental sounds from audio recordings." />
+  <style>
+    :root { color-scheme: dark; --bg:#081225; --panel:#101d35; --line:#253858; --text:#f2f7ff; --muted:#a8b8d2; --blue:#4f8cff; --cyan:#55e6d0; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif; background:radial-gradient(circle at 80% 0%,#15305a 0,transparent 35%),var(--bg); color:var(--text); }
+    .wrap { width:min(1120px,92%); margin:auto; }
+    header { display:flex; align-items:center; justify-content:space-between; padding:24px 0; gap:18px; }
+    .brand { font-size:1.25rem; font-weight:800; letter-spacing:.2px; } .brand span { color:var(--cyan); }
+    .tag { border:1px solid var(--line); border-radius:99px; padding:8px 12px; color:var(--muted); font-size:.82rem; }
+    .hero { padding:66px 0 38px; text-align:center; }
+    .eyebrow { color:var(--cyan); font-size:.8rem; font-weight:800; letter-spacing:2px; text-transform:uppercase; }
+    h1 { font-size:clamp(2.4rem,6vw,4.6rem); line-height:1.04; margin:18px auto; max-width:850px; letter-spacing:-.04em; }
+    h1 span { background:linear-gradient(90deg,var(--blue),var(--cyan)); color:transparent; background-clip:text; }
+    .intro { color:var(--muted); font-size:1.08rem; line-height:1.75; max-width:720px; margin:0 auto 28px; }
+    .actions { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+    a.btn { display:inline-block; text-decoration:none; padding:13px 19px; border-radius:12px; font-weight:750; }
+    .primary { color:#061225; background:linear-gradient(90deg,var(--blue),var(--cyan)); }
+    .secondary { color:var(--text); border:1px solid var(--line); background:#101d35; }
+    .features { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:38px 0; }
+    .feature { padding:20px; border:1px solid var(--line); background:#0d1a30cc; border-radius:18px; }
+    .feature .icon { font-size:1.5rem; } .feature h3 { margin:12px 0 6px; } .feature p { color:var(--muted); margin:0; line-height:1.6; font-size:.94rem; }
+    .app { border:1px solid var(--line); border-radius:22px; overflow:hidden; background:var(--panel); box-shadow:0 20px 70px #0004; }
+    .apphead { padding:18px 22px; display:flex; justify-content:space-between; gap:12px; align-items:center; border-bottom:1px solid var(--line); }
+    .apphead p { margin:4px 0 0; color:var(--muted); font-size:.9rem; }
+    .live { color:var(--cyan); font-size:.85rem; white-space:nowrap; }
+    iframe { display:block; width:100%; height:850px; border:0; background:#fff; }
+    .fallback { padding:18px; text-align:center; color:var(--muted); }
+    footer { padding:30px 0 42px; text-align:center; color:var(--muted); font-size:.88rem; }
+    @media(max-width:700px) { .hero{padding-top:42px} .features{grid-template-columns:1fr} iframe{height:900px} .tag{display:none} .apphead{align-items:flex-start;flex-direction:column} }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <div class="brand">🔊 Sound<span>Sense</span></div>
+    <div class="tag">Deep Learning · Environmental Audio AI</div>
+  </header>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">AI Audio Intelligence</div>
+      <h1>Hear the world.<br /><span>Understand every sound.</span></h1>
+      <p class="intro">SoundSense analyzes an audio clip and predicts its environmental sound category using a deep-learning classifier powered by YAMNet audio embeddings.</p>
+      <div class="actions">
+        <a class="btn primary" href="#try-app">Try SoundSense ↓</a>
+        <a class="btn secondary" href="https://github.com/muzammilshabbir4476-create/SoundSense-Environmental-Sound-Classification" target="_blank" rel="noopener noreferrer">View source code ↗</a>
+      </div>
+    </section>
+    <section class="features" aria-label="Features">
+      <article class="feature"><div class="icon">🎧</div><h3>Upload audio</h3><p>Submit a supported audio recording for analysis.</p></article>
+      <article class="feature"><div class="icon">🧠</div><h3>AI classification</h3><p>Extract sound representations and classify them into one of 10 selected categories.</p></article>
+      <article class="feature"><div class="icon">📊</div><h3>Prediction results</h3><p>Review the predicted category and model confidence score.</p></article>
+    </section>
+    <section class="app" id="try-app">
+      <div class="apphead"><div><strong>SoundSense web app</strong><p>Upload an audio file below to get a prediction.</p></div><div class="live">● Streamlit app</div></div>
+      <iframe src="https://soundsense-environmental-sound-classification-99ngsgis9knjishwy.streamlit.app/?embed=true" title="SoundSense audio classifier" loading="lazy" allow="clipboard-read; clipboard-write"></iframe>
+      <div class="fallback">If the embedded app does not load, <a href="https://soundsense-environmental-sound-classification-99ngsgis9knjishwy.streamlit.app" target="_blank" rel="noopener noreferrer" style="color:var(--cyan)">open SoundSense directly</a>.</div>
+    </section>
+  </main>
+  <footer class="wrap">SoundSense · Environmental Sound Classification Using Deep Learning</footer>
+</body>
+</html>
