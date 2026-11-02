@@ -306,30 +306,32 @@ with left:
     )
 
     if audio_file is not None:
+            if audio_file is not None:
         audio_bytes = audio_file.getvalue()
+
         try:
-    audio_data, sample_rate = sf.read(
-        io.BytesIO(audio_bytes),
-        dtype="float32",
-        always_2d=False
-    )
+            audio_data, sample_rate = sf.read(
+                io.BytesIO(audio_bytes),
+                dtype="float32",
+                always_2d=False
+            )
 
-    if audio_data.ndim > 1:
-        audio_data = np.mean(audio_data, axis=1)
+            if audio_data.ndim > 1:
+                audio_data = np.mean(audio_data, axis=1)
 
-    preview = io.BytesIO()
-    sf.write(
-        preview,
-        audio_data,
-        sample_rate,
-        format="WAV",
-        subtype="PCM_16"
-    )
+            preview = io.BytesIO()
+            sf.write(
+                preview,
+                audio_data,
+                sample_rate,
+                format="WAV",
+                subtype="PCM_16"
+            )
 
-    st.audio(preview.getvalue(), format="audio/wav")
+            st.audio(preview.getvalue(), format="audio/wav")
 
-except Exception as e:
-    st.warning(f"Audio preview error: {e}")
+        except Exception as e:
+            st.warning(f"Audio preview error: {e}")
 
         st.markdown(
             f'<div class="panel"><div class="stat-label">SELECTED FILE</div>'
