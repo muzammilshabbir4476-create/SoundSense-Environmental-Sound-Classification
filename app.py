@@ -288,8 +288,8 @@ st.markdown(
 left, right = st.columns([1.05, 0.95], gap="large")
 
 with left:
-    
     st.markdown("### 🎧 Audio workspace")
+
     st.markdown(
         '<div class="panel"><h3>Upload your audio</h3>'
         '<p style="color:#98a8c4">Choose a recording to begin classification. '
@@ -303,7 +303,7 @@ with left:
         label_visibility="collapsed"
     )
 
-        if audio_file is not None:
+    if audio_file is not None:
         audio_bytes = audio_file.getvalue()
         st.audio(audio_bytes, format="audio/wav")
 
