@@ -302,7 +302,8 @@ with left:
     )
 
     if audio_file is not None:
-        st.audio(audio_file)
+    audio_bytes = audio_file.getvalue()
+    st.audio(audio_bytes)
 
         st.markdown(
             f'<div class="panel"><div class="stat-label">SELECTED FILE</div>'
