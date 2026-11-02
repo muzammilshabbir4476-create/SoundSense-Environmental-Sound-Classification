@@ -305,8 +305,8 @@ with left:
         label_visibility="collapsed"
     )
 
+    
     if audio_file is not None:
-            if audio_file is not None:
         audio_bytes = audio_file.getvalue()
 
         try:
