@@ -301,10 +301,11 @@ with left:
         label_visibility="collapsed"
     )
 
-    if audio_file is not None:
+    
+if audio_file is not None:
     audio_bytes = audio_file.getvalue()
     st.audio(audio_bytes)
-
+    
         st.markdown(
             f'<div class="panel"><div class="stat-label">SELECTED FILE</div>'
             f'<b>{html.escape(audio_file.name)}</b>'
